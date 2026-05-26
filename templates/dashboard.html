@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Analytics Dashboard</title>
+
+<style>
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#36d1dc,#5b86e5);
+padding:20px;
+text-align:center;
+}
+
+table{
+width:95%;
+margin:auto;
+background:white;
+border-collapse:collapse;
+border-radius:12px;
+overflow:hidden;
+}
+
+th{
+background:#4CAF50;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+border:1px solid #ddd;
+}
+
+input,button{
+padding:10px;
+margin:10px;
+}
+
+a{
+text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Student Analytics Dashboard</h1>
+
+<form action="/search" method="POST">
+<input type="text" name="keyword" placeholder="Search Student Name">
+<button type="submit">Search</button>
+</form>
+
+<a href="/export">
+<button>Export CSV</button>
+</a>
+
+<a href="/">
+<button>← Back to Predictor</button>
+</a>
+
+<br><br>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Hours</th>
+<th>Attendance</th>
+<th>Sleep</th>
+<th>Mid-Sem</th>
+<th>Marks</th>
+<th>Grade</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for row in history %}
+<tr>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+<td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[6] }}</td>
+<td>{{ row[7] }}</td>
+<td>{{ row[8] }}</td>
+<td>
+<a href="/delete/{{ row[0] }}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

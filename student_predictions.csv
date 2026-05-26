@@ -1,0 +1,4 @@
+id,name,hours,attendance,sleep,midsem,predicted_marks,grade,status
+1,Varun Sanjay Varute,12.0,65.0,8.0,20.0,96.76,A+,PASS
+2,Onkar Tanaji Jangam,8.0,54.0,8.0,15.0,73.33,B,PASS
+3,Varun Sanjay Varute,8.0,90.0,6.0,20.0,95.09,A+,PASS
